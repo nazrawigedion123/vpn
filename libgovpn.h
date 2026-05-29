@@ -82,10 +82,7 @@ typedef struct { void *data; GoInt len; GoInt cap; } GoSlice;
 extern "C" {
 #endif
 
-
-// The //export comment is strictly required! It tells the Go compiler
-// to expose this function to C/Rust.
-extern void StartGoVPNClient(char* serverURL);
+extern void StartDirectVPNTunnel(int localPort, int publicListenPort, char* remoteAddr);
 
 #ifdef __cplusplus
 }
